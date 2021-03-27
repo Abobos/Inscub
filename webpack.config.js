@@ -1,14 +1,18 @@
-const HtmlWebPackPlugin = require('html-webpack-plugin')
+const HtmlWebPackPlugin = require('html-webpack-plugin');
 
 module.exports = {
 	module: {
 		rules: [
 			{
-				test: /\.js$/,
+				test: /\.(js|jsx)$/,
 				exclude: /node_modules/,
 				use: {
 					loader: 'babel-loader',
 				},
+			},
+			{
+				test: /\.css$/,
+				use: ['style-loader', 'css-loader'],
 			},
 		],
 	},
@@ -18,4 +22,7 @@ module.exports = {
 			filename: './index.html',
 		}),
 	],
-}
+	resolve: {
+		extensions: ['.js', '.jsx'],
+	},
+};

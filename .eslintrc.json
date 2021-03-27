@@ -15,17 +15,16 @@
     "ecmaVersion": 12,
     "sourceType": "module"
   },
-  "plugins": ["react"],
-  "rules": {
+  "plugins": ["react", "prettier"],
     "rules": {
-      "react/jsx-filename-extension": [1, { "allow": "as-needed" }],
+      "react/jsx-filename-extension": [0, { "allow": "as-needed" }],
     "react/prefer-stateless-function": [0, { "ignorePureComponents": true }],
     "prettier/prettier": [
       "error",
       {
         "printWidth": 80,
         "trailingComma": "es5",
-        "semi": false,
+        "semi": true,
         "jsxSingleQuote": true,
         "singleQuote": true,
         "useTabs": true
@@ -33,3 +32,4 @@
     ]
   }
 }
+
