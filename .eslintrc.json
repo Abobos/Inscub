@@ -8,6 +8,7 @@
     "airbnb",
     "plugin:prettier/recommended"
   ],
+  "parser": "@babel/eslint-parser",
   "parserOptions": {
     "ecmaFeatures": {
       "jsx": true
@@ -17,7 +18,7 @@
   },
   "plugins": ["react", "prettier"],
     "rules": {
-      "react/jsx-filename-extension": [0, { "allow": "as-needed" }],
+    "react/jsx-filename-extension": [0, { "allow": "as-needed" }],
     "react/prefer-stateless-function": [0, { "ignorePureComponents": true }],
     "prettier/prettier": [
       "error",
@@ -27,7 +28,7 @@
         "semi": true,
         "jsxSingleQuote": true,
         "singleQuote": true,
-        "useTabs": true
+        "useTabs": false
       }
     ]
   }

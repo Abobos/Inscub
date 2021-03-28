@@ -5,17 +5,17 @@ import Home from './pages/Home/Home';
 import './style.css';
 
 class App extends Component {
-	render() {
-		return (
-			<Router>
-				<Switch>
-					<Route exact path='/'>
-						<Home />;
-					</Route>
-				</Switch>
-			</Router>
-		);
-	}
+  render() {
+    return (
+      <Router>
+        <Switch>
+          <Route exact path='/'>
+            <Home />;
+          </Route>
+        </Switch>
+      </Router>
+    );
+  }
 }
 
 export default App;

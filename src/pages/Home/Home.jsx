@@ -1,36 +1,49 @@
 import React, { Component } from 'react';
-import { Link } from 'react-router-dom';
 
 import FormInput from '../../components/Input/Input';
 import Step from '../../components/Steps/Steps';
 
 import HomeContainer, {
-	FormContainer,
-	DescriptionContainer,
-} from '../Home.styles';
+  FormContainer,
+  DescriptionContainer,
+  Terms,
+  Header,
+  StyledLink,
+} from '../home.styles';
 
 class Home extends Component {
-	render() {
-		return (
-			<HomeContainer>
-				<FormContainer>
-					<Step />
-					<h1>Let&apos;s set up your account</h1>
-					<p>Already have an account? </p> <Link to='/'>Sign in</Link>
-					<FormInput />
-				</FormContainer>
-				<DescriptionContainer>
-					{' '}
-					<h1>Dummy Heading</h1>
-					<p className='paragraph'>
-						Lorem ipsum dolor sit amet consectetur adipisicing elit.
-						Perspiciatis possimus rem necessitatibus voluptate quidem ea,
-						dolore.
-					</p>
-				</DescriptionContainer>
-			</HomeContainer>
-		);
-	}
+  render() {
+    return (
+      <HomeContainer>
+        <Step />
+        <FormContainer>
+          <Header>
+            <h1>Let&apos;s set up your account</h1>
+            <p>
+              Already have an account? <StyledLink to='/'>Sign in</StyledLink>
+            </p>
+          </Header>
+          <FormInput />
+
+          <Terms>
+            {' '}
+            By clicking the &quot;Next&quot; button, you are agree to creating a
+            free account, and to <b>Terms of Service</b> and{' '}
+            <b>Privacy Policy</b>
+          </Terms>
+        </FormContainer>
+        <DescriptionContainer>
+          {' '}
+          <h1>Dummy Heading</h1>
+          <p className='paragraph'>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit.
+            Perspiciatis possimus rem necessitatibus voluptate quidem ea,
+            dolore.
+          </p>
+        </DescriptionContainer>
+      </HomeContainer>
+    );
+  }
 }
 
 export default Home;
