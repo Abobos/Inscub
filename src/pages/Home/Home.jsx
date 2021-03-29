@@ -6,10 +6,8 @@ import Step from '../../components/Steps/Steps';
 import HomeContainer, {
   FormContainer,
   DescriptionContainer,
-  Terms,
-  Header,
-  StyledLink,
-} from '../home.styles';
+
+} from './Home.styles';
 
 class Home extends Component {
   render() {
@@ -17,20 +15,7 @@ class Home extends Component {
       <HomeContainer>
         <Step />
         <FormContainer>
-          <Header>
-            <h1>Let&apos;s set up your account</h1>
-            <p>
-              Already have an account? <StyledLink to='/'>Sign in</StyledLink>
-            </p>
-          </Header>
           <FormInput />
-
-          <Terms>
-            {' '}
-            By clicking the &quot;Next&quot; button, you are agree to creating a
-            free account, and to <b>Terms of Service</b> and{' '}
-            <b>Privacy Policy</b>
-          </Terms>
         </FormContainer>
         <DescriptionContainer>
           {' '}

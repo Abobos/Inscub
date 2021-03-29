@@ -23,31 +23,6 @@ export const FormContainer = styled.div`
   }
 `;
 
-export const StyledLink = styled(Link)`
-  text-decoration: none;
-  color: rgb(38, 113, 252);
-  font-weight: bolder;
-`;
-
-export const Header = styled.div`
-  text-align: left;
-  & h1,
-  & p {
-    margin: 0 150px 40px 0;
-  }
-`;
-export const Terms = styled.div`
-  width: 450px;
-  margin-top: 30px;
-  line-height: 1.7;
-  font-size: 12px;
-  text-align: justify;
-
-  & b {
-    color: rgb(38, 113, 252);
-  }
-`;
-
 export const DescriptionContainer = styled.div`
   @media only screen and (max-width: 1000px) {
     display: none;

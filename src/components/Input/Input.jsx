@@ -5,7 +5,18 @@ import InputElement, {
   InputPlaceHolder,
   SelectElement,
   ButtonInput,
+  SmallText,
+  SelectImg,
+  FormElement,
+  Terms,
+  Header,
+  StyledLink
 } from './input.styles';
+
+
+import arrowLogo from "../../arrow.svg";
+import eyeLogo from "../../eye.svg";
+
 
 class FormInput extends Component {
   constructor(props) {
@@ -17,15 +28,31 @@ class FormInput extends Component {
       role: '',
       password: '',
       stage: 1,
-      isFormValid: false,
+      visibility: false,
+      isEmailError: false
     };
   }
 
   handleChange = (event) => {
     const key = event.target.name;
-
     this.setState({ [key]: event.target.value });
   };
+
+
+  checkDisability = () => {
+    const { name, email, role, password } = this.state;
+
+    if (name && email && role && password) {
+    return false;
+    } else {
+      return true;
+    }
+  }
+
+  handleVisibility = () =>  {
+    this.setState({visibility: !this.state.visibility});
+  }
+
 
   handleForm = () => {
     const { name, email, role, password } = this.state;
@@ -38,10 +65,16 @@ class FormInput extends Component {
   };
 
   render() {
-    const { name, email, role, password, isFormValid } = this.state;
+    const { name, email, role, password, visibility, isEmailError } = this.state;
 
     return (
-      <>
+      <FormElement>
+        <Header>
+            <h1>Let&apos;s set up your account</h1>
+            <p>
+              Already have an account? <StyledLink to='/'>Sign in</StyledLink>
+            </p>
+          </Header>
         <InputLabel>
           <InputElement
             type='text'
@@ -54,38 +87,46 @@ class FormInput extends Component {
         </InputLabel>
         <InputLabel>
           <InputElement
-            type='text'
+            type='email'
             name='email'
             onChange={this.handleChange}
             value={email}
-            required
           />
           <InputPlaceHolder>Email Address</InputPlaceHolder>
         </InputLabel>
+        {isEmailError && <SmallText>Please enter a valid email</SmallText>}
         <InputLabel>
           <SelectElement
             name='role'
             onChange={this.handleChange}
             value={role}
-            required
           >
             <option value=''>I would describe myself as</option>
             <option value='Developer'>Developer</option>
             <option value='UI/UX'>UI/UX Designer</option>
           </SelectElement>
+          <SelectImg src={arrowLogo}/>
         </InputLabel>
         <InputLabel>
           <InputElement
-            type='password'
+            type={visibility ? 'text': 'password'}
             name='password'
             onChange={this.handleChange}
             value={password}
             required
           />
           <InputPlaceHolder>Password</InputPlaceHolder>
+          <SelectImg onClick={() => this.handleVisibility()} src={eyeLogo}/>
         </InputLabel>
-        <ButtonInput onClick={this.handleForm}>Next</ButtonInput>
-      </>
+        <SmallText>Minimum of 8 characters</SmallText>
+        <ButtonInput onClick={this.handleForm} disabled={this.checkDisability()}>Next</ButtonInput>
+        <Terms>
+            {' '}
+            By clicking the &quot;Next&quot; button, you are agree to creating a
+            free account, and to <b>Terms of Service</b> and{' '}
+            <b>Privacy Policy</b>
+          </Terms>
+      </FormElement>
     );
   }
 }
