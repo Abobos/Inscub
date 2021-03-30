@@ -6,7 +6,6 @@ import Step from '../../components/Steps/Steps';
 import HomeContainer, {
   FormContainer,
   DescriptionContainer,
-
 } from './Home.styles';
 
 class Home extends Component {
