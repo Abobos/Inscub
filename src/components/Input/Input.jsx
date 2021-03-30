@@ -87,10 +87,11 @@ class FormInput extends Component {
         </InputLabel>
         <InputLabel>
           <InputElement
-            type='email'
+            type='text'
             name='email'
             onChange={this.handleChange}
             value={email}
+            required
           />
           <InputPlaceHolder>Email Address</InputPlaceHolder>
         </InputLabel>

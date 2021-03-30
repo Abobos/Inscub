@@ -63,7 +63,8 @@ const InputElement = styled.input`
   font-size: 14px;
   width: 100%;
 
-  &:focus + span {
+  &:focus + span,
+  &:valid + span {
     top: 20px;
     font-size: 10px;
     color: #222;
@@ -79,12 +80,13 @@ const InputElement = styled.input`
     color: red;
   }
 */
-  &:valid {
+  &:valid + span {
     appearance: none;
+    top: 20px;
   }
 
-  &:valid + span {
-    top: 20px;
+  &:focus:invalid {
+    border-color: red;
   }
 `;
 
