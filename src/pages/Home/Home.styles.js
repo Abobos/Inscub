@@ -1,7 +1,5 @@
 import styled, { css } from 'styled-components';
 
-import { Link } from 'react-router-dom';
-
 const HomeContainer = styled.div`
   display: flex;
   height: 100vh;
@@ -42,6 +40,8 @@ export const DescriptionContainer = styled.div`
     margin-top: 80px;
     line-height: 1.7;
     letter-spacing: 0.5px;
+    font-size: 16px;
+    text-align: justify;
   }
 `;
 
