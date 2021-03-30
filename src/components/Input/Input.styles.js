@@ -69,24 +69,15 @@ const InputElement = styled.input`
     font-size: 10px;
     color: #222;
     background-color: white;
-  }
-
-  /* &:focus:invalid {
-    border-color: red;
-  }
-
-  &:focus:invalid + span {
-    top: 20px;
-    color: red;
-  }
-*/
-  &:valid + span {
     appearance: none;
-    top: 20px;
   }
 
   &:focus:invalid {
     border-color: red;
+  }
+
+  &:focus:invalid + span {
+    color: red;
   }
 `;
 
@@ -124,6 +115,7 @@ export const ButtonInput = styled.button`
 
 export const SmallText = styled.small`
   align-self: start;
+  color: ${(props) => (props.emailError ? 'red' : 'black')};
 `;
 
 export default InputElement;
